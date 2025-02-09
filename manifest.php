@@ -52,6 +52,7 @@ if (strpos($manifestUrl, 'bpaita') === false) {
 }
 
 $manifestUrl = str_replace("bpaita", "bpaicatchupta", $manifestUrl);
+$baseUrl = dirname($channelData['manifest_url']);
 
 $manifestUrl .= "?$hmac";
 if ($catchupRequest) {
@@ -62,7 +63,6 @@ $originalMpdContent = fetchContent($manifestUrl);
 if (!$originalMpdContent) {
     http_response_code(500);die("failed to fetch mpd");
 }
-$baseUrl = dirname($channelData['manifest_url']);
 $mpdContent = $originalMpdContent;
 
 $mpdContent = preg_replace_callback('/<SegmentTemplate\s+.*?>/', function ($matches) use ($hmac) {
