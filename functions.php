@@ -84,7 +84,7 @@ function channelDetails($id) {
         "Referer: https://watch.tataplay.com/",
         "Origin: https://watch.tataplay.com",
         "Referrer-Policy: strict-origin-when-cross-origin",
-        "User-Agent: Android"
+        "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36 Edg/131.0.0.0"
     ];
 
     $curl = curl_init();
@@ -93,6 +93,8 @@ function channelDetails($id) {
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_HTTPHEADER => $channelDetailsHeaders,
     ]);
+    curl_setopt($curl, CURLOPT_ENCODING, 'gzip, deflate, br');
+    
     $response = curl_exec($curl);
     $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
     curl_close($curl);
@@ -156,7 +158,7 @@ function generateJWT($channelId) {
         "x-subscriber-name: " . $creds['sname'],
         "Referer: https://watch.tataplay.com/",
         "Origin: https://watch.tataplay.com",
-        "User-Agent: Android"
+        "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36 Edg/131.0.0.0"
     ];
     $curl = curl_init();
     curl_setopt_array($curl, [
@@ -166,6 +168,8 @@ function generateJWT($channelId) {
         CURLOPT_POSTFIELDS => $payload,
         CURLOPT_HTTPHEADER => $headers,
     ]);
+    curl_setopt($curl, CURLOPT_ENCODING, 'gzip, deflate, br');
+    
     $tokenResponse = curl_exec($curl);
     curl_close($curl);
     
@@ -193,6 +197,7 @@ function getHmac($id) {
     curl_setopt($ch, CURLOPT_URL, "https://tm.tapi.videoready.tv/digital-feed-services/api/partner/cdn/player/details/LIVE/{$id}");
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
+    curl_setopt($ch, CURLOPT_ENCODING, 'gzip, deflate, br');
     curl_setopt($ch, CURLOPT_HTTPHEADER, [
         'accept: */*',
         'accept-language: en-US,en;q=0.9,en-IN;q=0.8',
@@ -212,7 +217,7 @@ function getHmac($id) {
         'sec-fetch-dest: empty',
         'sec-fetch-mode: cors',
         'sec-fetch-site: cross-site',
-        'user-agent: Android',
+        'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36 Edg/131.0.0.0',
     ]);
     
     $response = curl_exec($ch);
