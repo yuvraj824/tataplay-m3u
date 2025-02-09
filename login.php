@@ -16,6 +16,7 @@ function doCurlRequest($url, $postData) {
         'Accept-Encoding: gzip, deflate, br, zstd',
         'Accept-Language: en-US,en;q=0.9,en-IN;q=0.8',
         'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36 Edg/131.0.0.0',
+        'device_details: {"pl":"web","os":"WINDOWS","lo":"en-us","app":"1.48.8","dn":"PC","bv":116,"bn":"OPERA","device_id":"7683d93848b0f472c508e38b1827038a","device_type":"WEB","device_platform":"PC","device_category":"open","manufacturer":"WINDOWS_OPERA_116","model":"PC","sname":""}',
         'Referer: https://watch.tataplay.com/',
         'Origin: https://watch.tataplay.com',
         'Sec-Fetch-Dest: empty',
