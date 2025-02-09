@@ -11,7 +11,7 @@ $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVE
 $host = $_SERVER['HTTP_HOST'];
 $requestUri = $_SERVER['REQUEST_URI'];
 $currentScript = basename($_SERVER['SCRIPT_NAME']);
-$baseMpdUrl = $protocol . $host . str_replace($currentScript, 'manifest.mpd', $requestUri);
+$baseMpdUrl = $protocol . $host . str_replace($currentScript, 'manifest.php', $requestUri);
 $baseWvUrl = $protocol . $host . str_replace($currentScript, 'widevine.php', $requestUri);
 $data = json_decode($jsonData, true);
 
