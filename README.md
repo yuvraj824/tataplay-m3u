@@ -3,6 +3,10 @@
 
 <h4 align='center'>⚡ PHP Script For Grabbing M3U Playlist from <br><a href="https://watch.tataplay.com">watch.tataplay.com</a> With 8-Days Catchup<br><br>🌟 If you find it helpful, Consider Giving STAR to This Repository❗</h4>
 
+## ➡️Requirements:
+- **Active Tataplay Account** with a channel subscribed
+- **A Working Brain**
+
 ## 🎯 HOW TO USE :
 
 ### 1️⃣ Download PHP Web Server
@@ -12,7 +16,7 @@
 
 ### 2️⃣ Download and Extract Script
 
-- **Download:** [Script Zip](https://github.com/yuvraj824/tataplay/archive/refs/heads/main.zip)
+- **Download:** [Script Zip](https://github.com/yuvraj824/tataplay-m3u/archive/refs/heads/main.zip)
 
 1. Extract all files into the `htdocs` under `tataplay` folder in file manager (path may vary for XAMPP).
     ```bash
@@ -48,13 +52,14 @@
 - Multi-Quality Streaming
 - Easy as Plug & Play
 - Works on **All Compatible Platforms**
+- Written in Simplest form, Good for understanding and performing Authentication Process in PHP
 
 ## Advanced Features:
 
 - **8 Days Catchup Support** for available channels
 - Automatically Extracts Required Tokens
 - Well-Structured Cache System
-- Written in Simplest form, Good for understanding and performing Authentication Process in PHP
+- Easy as Plug & Play
 
 ## Warnings:
 
@@ -63,8 +68,7 @@
 
 ## Join for Updates:
 
-- Join our Telegram Channel: [YGX WORLD](https://telegram.me/ygx_world)
-- Discussion Group: [YGX CHAT](https://telegram.me/ygx_chat)
+- Join our Telegram Channel: [YGX WORLD](https://telegram.me/ygx_world) & Discussion Group: [YGX CHAT](https://telegram.me/ygx_chat)
 
 <hr>
 
@@ -72,9 +76,7 @@
 [![Telegram](https://img.shields.io/badge/Telegram-Join%20Channel-blue?logo=telegram)](https://t.me/YGX_WORLD)
 [![PHP](https://img.shields.io/badge/PHP-7.4%2B-purple)]()
 
-> ⚠️ **Disclaimer:** This project is for educational purposes only to demonstrate authentication and IPTV streaming mechanics. I am not responsible for any misuse of the code that may cause revenue loss to the concerned parties and owners of these services. This code is protected under the [GPL](https://github.com/yuvraj490/zee5-live-channels/blob/main/LICENSE) license.
-
-<h4 align='center'>© 2023-25 YGX WORLD</h4>
+> ⚠️ **Disclaimer:** This project is for educational purposes only to demonstrate authentication and IPTV streaming mechanics. I am not responsible for any misuse of the code that may cause revenue loss to the concerned parties and owners of these services. This code is protected under the [GPL](https://github.com/yuvraj490/tataplay-m3u/blob/main/LICENSE) license.
 
 <!-- DO NOT REMOVE THIS CREDIT -->
 <!-- © 2023-25 yuvraj824 -->
