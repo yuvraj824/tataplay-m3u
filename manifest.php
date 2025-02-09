@@ -52,7 +52,7 @@ if (strpos($manifestUrl, 'bpaita') === false) {
 }
 
 $manifestUrl = str_replace("bpaita", "bpaicatchupta", $manifestUrl);
-$baseUrl = dirname($channelData['manifest_url']);
+$baseUrl = dirname($manifestUrl);
 
 $manifestUrl .= "?$hmac";
 if ($catchupRequest) {
