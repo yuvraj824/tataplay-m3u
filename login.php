@@ -11,32 +11,25 @@ function saveCreds($data) {
 
 function doCurlRequest($url, $postData) {
     $headers = [
-        'accept: */*',
-        'accept-language: en-US,en;q=0.9',
-        'cache-control: no-cache',
-        'content-type: application/json',
-        'device_details: {"pl":"web","os":"WINDOWS","lo":"en-us","app":"1.48.8","dn":"PC","bv":116,"bn":"OPERA","device_id":"7683d93848b0f472c508e38b1827038a","device_type":"WEB","device_platform":"PC","device_category":"open","manufacturer":"WINDOWS_OPERA_116","model":"PC","sname":""}',
-        'locale: ENG',
-        'origin: https://watch.tataplay.com',
-        'platform: web',
-        'pragma: no-cache',
-        'priority: u=1, i',
-        'referer: https://watch.tataplay.com/',
-        'sec-ch-ua: "Opera";v="116", "Chromium";v="131", "Not_A Brand";v="24"',
-        'sec-ch-ua-mobile: ?0',
-        'sec-ch-ua-platform: "Windows"',
-        'sec-fetch-dest: empty',
-        'sec-fetch-mode: cors',
-        'sec-fetch-site: cross-site',
-        'user-agent: Android'
+        'Content-Type: application/json',
+        'Accept: */*',
+        'Accept-Encoding: gzip, deflate, br, zstd',
+        'Accept-Language: en-US,en;q=0.9,en-IN;q=0.8',
+        'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36 Edg/131.0.0.0',
+        'Referer: https://watch.tataplay.com/',
+        'Origin: https://watch.tataplay.com',
+        'Sec-Fetch-Dest: empty',
+        'Sec-Fetch-Mode: cors',
+        'Sec-Fetch-Site: cross-site'
     ];
 
     $ch = curl_init($url);
-    curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLOPT_POST, true);
     curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($postData));
-    
+    curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+    curl_setopt($ch, CURLOPT_ENCODING, 'gzip, deflate, br');
+
     $response = curl_exec($ch);
     $error = curl_errno($ch) ? ['error' => curl_error($ch)] : json_decode($response, true);
     curl_close($ch);
@@ -51,11 +44,11 @@ $hiddenFields = [];
 if (logged_in()) {
     $message = 'Logged in.';
     $showOtpForm = false;
-}elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
+} elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['action'])) {
         if ($_POST['action'] === 'get_otp' && !logged_in()) {
             $sid = trim($_POST['sid'] ?? '');
-            
+
             if (strlen($sid) !== 10 || !ctype_digit($sid)) {
                 $message = 'SID must be of 10 digits.';
             } else {
