@@ -1,0 +1,4 @@
+RewriteEngine On
+RewriteRule app.* - [R=403,L]
+RewriteCond %{REQUEST_FILENAME} manifest\.mpd
+RewriteRule ^(.*)$ manifest.php?%{QUERY_STRING} [L]
