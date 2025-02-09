@@ -66,10 +66,6 @@
 - This is for Educational Purposes Only
 - Do not sell this script, it is 💯% Free
 
-## Join for Updates:
-
-- Join our Telegram Channel: [YGX WORLD](https://telegram.me/ygx_world) & Discussion Group: [YGX CHAT](https://telegram.me/ygx_chat)
-
 <hr>
 
 [![License: GPL](https://img.shields.io/badge/License-GPL-blue.svg)](LICENSE)
