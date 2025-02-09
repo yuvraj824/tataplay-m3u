@@ -51,6 +51,8 @@ if (strpos($manifestUrl, 'bpaita') === false) {
     exit;
 }
 
+$manifestUrl = str_replace("bpaita", "bpaicatchupta", $manifestUrl);
+
 $manifestUrl .= "?$hmac";
 if ($catchupRequest) {
     $manifestUrl .= '&begin=' . $beginFormatted . '&end=' . $endFormatted;
