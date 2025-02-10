@@ -1,13 +1,13 @@
 
 <p align='center'><img src="https://i.ibb.co/f7fLjcX/Tataplay.png" width="500" ></p>
 
-<h4 align='center'>⚡ PHP Script For Grabbing M3U Playlist from <br><a href="https://watch.tataplay.com">watch.tataplay.com</a> With 8-Days Catchup<br><br>🌟 If you find it helpful, Consider Giving STAR to This Repository❗</h4>
+<h4 align='center'>⚡ PHP Script For Grabbing M3U Playlist from <a href="https://watch.tataplay.com">watch.tataplay.com</a> With 8-Days Catchup<br><br>🌟 If you find it helpful, Consider Giving STAR to This Repository❗</h4>
 
 ## ➡️Requirements:
-- **Active Tataplay Account** with a channel subscribed
+- **Active Tataplay Account**
 - **A Working Brain**
 
-## 🎯 HOW TO USE :
+## 🎯 HOW TO USE
 
 ### 1️⃣ Download PHP Web Server
 
@@ -22,27 +22,27 @@
     ```bash
     📂FileManager
     └───📂htdocs/
-         └───📂 tataplay/
-              │───── 📄 playlist.php
-              ├───── 📄 functions.php
-              ├───── 📄 manifest.php
-              └───── 📄 ....
+         └───📂tataplay/
+              │────📄playlist.php
+              ├────📄functions.php
+              ├────📄manifest.php
+              └────📄 ....
     ```
-2. Open KSWEB app (or XAMPP for PC) and start the APACHE server.
+2. Open KSWEB app (or XAMPP for PC) and start the **APACHE** server.
 
 3. The setup is complete, and the script is ready to use.
 
 ## How to Login:
 
-- Open the Login page: [http://localhost:8080/tataplay/login.php](http://localhost:8080/tataplay/login.php)
+- Open the Login page<br>(port `80` for XAMPP): [http://localhost:8000/tataplay/login.php](http://localhost:8000/tataplay/login.php)
 - Login with TATAPLAY subscriber ID and enter the OTP received on RMN.
 > **Note:** The account you use must be **Active Account**.
 
 ## How to Access M3U Playlist:
 
-- In Tivimate or OTT Navigator, use the following playlist link:
+- In Tivimate or OTT Navigator, use the following playlist link (port `80` for XAMPP):
     ```
-    http://localhost:8080/tataplay/playlist.php
+    http://localhost:8000/tataplay/playlist.php
     ```
 - Enjoy Tataplay Channels with 8-day Catchup🎉.
 
@@ -59,7 +59,6 @@
 - **8 Days Catchup Support** for available channels
 - Automatically Extracts Required Tokens
 - Well-Structured Cache System
-- Easy as Plug & Play
 
 ## Warnings:
 
