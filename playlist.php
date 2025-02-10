@@ -41,6 +41,7 @@ foreach ($data['data']['channels'] as $channel) {
 //  $m3uContent .= "#KODIPROP:inputstream.adaptive.license_key=__CLEARKEY_LICENSE_URL__?id=$id\n";
     $m3uContent .= "#KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha\n";
     $m3uContent .= "#KODIPROP:inputstream.adaptive.license_key=$wvUrl\n";
+    $m3uContent .= "#KODIPROP:inputstream.adaptive.manifest_type=mpd\n";
     $m3uContent .= "#EXTINF:-1 tvg-id=\"ts$id\" $ctag group-title=\"$genre\" tvg-logo=\"https://mediaready.videoready.tv/tatasky-epg/image/fetch/f_auto,fl_lossy,q_auto,h_250,w_250/$logo\",$name\n";
     $m3uContent .= $mpdUrl . $headers . "\n\n";
 }
