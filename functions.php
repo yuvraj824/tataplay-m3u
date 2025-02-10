@@ -264,9 +264,7 @@ function getFetcherData() {
     if ($httpCode === 200 && !empty($response)) {
         file_put_contents($filename, $response);
         return $response;
-    } else {
-        $cachedData = @file_get_contents($filename);
-        file_put_contents($filename, $cachedData);
-        return $cachedData;
     }
+    http_response_code(500);
+    die("error while fetching fetcher data.");
 }
