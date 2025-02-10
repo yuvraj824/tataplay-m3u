@@ -1,19 +1,17 @@
 <?php
-//========================================================//
 // Don't Sell this Script, This is 100% Free.
-//========================================================//
 include 'functions.php';
 if (!logged_in()) {
   die("log in first.");
 }
 $jsonData = getFetcherData();
+$data = json_decode($jsonData, true);
 $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
 $host = $_SERVER['HTTP_HOST'];
 $requestUri = $_SERVER['REQUEST_URI'];
 $currentScript = basename($_SERVER['SCRIPT_NAME']);
-$baseMpdUrl = $protocol . $host . str_replace($currentScript, 'manifest.php', $requestUri);
+$baseMpdUrl = $protocol . $host . str_replace($currentScript, 'manifest.mpd', $requestUri);
 $baseWvUrl = $protocol . $host . str_replace($currentScript, 'widevine.php', $requestUri);
-$data = json_decode($jsonData, true);
 
 $userAgent = $_SERVER['HTTP_USER_AGENT'] ?? '';
 if (stripos($userAgent, 'tivimate') !== false) { // tivimate
@@ -29,20 +27,24 @@ if (stripos($userAgent, 'tivimate') !== false) { // tivimate
     $ctag = 'catchup-type="append" catchup-days="8" catchup-source="&begin={utc}&end={utcend}"';
 }
 
-echo "#EXTM3U x-tvg-url=\"https://avkb.short.gy/epg.xml.gz\"\n#Script by @YGX_WORLD\n\n";
+$m3uContent = "#EXTM3U x-tvg-url=\"https://avkb.short.gy/epg.xml.gz\"\n#Script by @YGX_WORLD\n\n";
+
 foreach ($data['data']['channels'] as $channel) {
     $id = $channel['id'];
     $name = $channel['name'];
     $logo = $channel['logo_url'];
     $genre = $channel['primaryGenre'];
     $mpdUrl = $baseMpdUrl . '?id=' . $id;
-    $wvUrl = $baseWvUrl . '?id=' . $id;    
-//  echo "#KODIPROP:inputstream.adaptive.license_type=clearkey\n";
-//  echo "#KODIPROP:inputstream.adaptive.license_key=__CLEARKEY_LICENSE_URL__?id=$id\n";
-    echo "#KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha\n";
-    echo "#KODIPROP:inputstream.adaptive.license_key=$wvUrl\n";
-    echo "#EXTINF:-1 tvg-id=\"ts$id\" $ctag group-title=\"$genre\" tvg-logo=\"https://mediaready.videoready.tv/tatasky-epg/image/fetch/f_auto,fl_lossy,q_auto,h_250,w_250/$logo\",$name\n";
-    echo $mpdUrl . $headers . "\n\n";
+    $wvUrl = $baseWvUrl . '?id=' . $id;
+
+//  $m3uContent .= "#KODIPROP:inputstream.adaptive.license_type=clearkey\n";
+//  $m3uContent .= "#KODIPROP:inputstream.adaptive.license_key=__CLEARKEY_LICENSE_URL__?id=$id\n";
+    $m3uContent .= "#KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha\n";
+    $m3uContent .= "#KODIPROP:inputstream.adaptive.license_key=$wvUrl\n";
+    $m3uContent .= "#EXTINF:-1 tvg-id=\"ts$id\" $ctag group-title=\"$genre\" tvg-logo=\"https://mediaready.videoready.tv/tatasky-epg/image/fetch/f_auto,fl_lossy,q_auto,h_250,w_250/$logo\",$name\n";
+    $m3uContent .= $mpdUrl . $headers . "\n\n";
 }
+
+echo $m3uContent;
 exit;
 //@yuvraj824
