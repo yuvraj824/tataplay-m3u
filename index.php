@@ -9,7 +9,8 @@ if (!logged_in()) {
 // Get the current URL for playlist
 $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https://' : 'http://';
 $host = $_SERVER['HTTP_HOST'];
-$playlistUrl = $protocol . $host . dirname($_SERVER['PHP_SELF']) . '/playlist.php';
+$dir = rtrim(dirname($_SERVER['PHP_SELF']), '/');
+$playlistUrl = $protocol . $host . $dir . '/playlist.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
