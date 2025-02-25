@@ -39,16 +39,17 @@ if (!isset($channelData['is_catchup_available']) || $channelData['is_catchup_ava
     $catchupRequest = false;
 }
 
-$hmac = getHmac($id);
-if (!$hmac) {
-    http_response_code(500);
-    exit('<h1>Error fetching HMAC</h1>');
-}
 
 $manifestUrl = $channelData['manifest_url'];
 if (strpos($manifestUrl, 'bpaita') === false) {
     header("Location: $manifestUrl");
     exit;
+}
+
+$hmac = getHmac($id);
+if (!$hmac) {
+    http_response_code(500);
+    exit('<h1>Error fetching HMAC</h1>');
 }
 
 $manifestUrl = str_replace("bpaita", "bpaicatchupta", $manifestUrl);
@@ -79,7 +80,6 @@ if (strpos($mpdContent, 'pssh') === false && strpos($mpdContent, 'cenc:default_K
     if ($widevinePssh === null) {
         http_response_code(500); die("Unable to extract Pssh.");
     }
-    $mpdContent = preg_replace('/<BaseURL>.*<\/BaseURL>/', "<BaseURL>$baseUrl/dash/</BaseURL>", $mpdContent);
 
     $newContent = "<!-- Common Encryption -->\n      <ContentProtection schemeIdUri=\"urn:mpeg:dash:mp4protection:2011\" value=\"cenc\" cenc:default_KID=\"{$widevinePssh['kid']}\"/>";
  
