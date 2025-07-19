@@ -140,7 +140,7 @@ function generateJWT($channelId) {
     $payload = json_encode([
         'action' => 'stream',
         'epids' => $epids,
-        'samplingExpiry' => 'wLixk6fGx27amZptXg2I/w==#v2'
+        'samplingExpiry' => 'ucPtCl63EsD1qBrlIhY9nw==#v2'
     ]);
     $headers = [
         "accept: */*",
