@@ -1,78 +1,104 @@
+<div align="center">
+  <img src="https://i.ibb.co/f7fLjcX/Tataplay.png" width="500" alt="TataPlay Logo">
+  
+  <h4>⚡ PHP Script For Grabbing M3U Playlist from <a href="https://watch.tataplay.com">watch.tataplay.com</a> With 8-Days Catchup</h4>
+  
+  <p>🌟 If you find it helpful, Consider Giving STAR to This Repository❗</p>
+</div>
 
-<p align='center'><img src="https://i.ibb.co/f7fLjcX/Tataplay.png" width="500" ></p>
+## ➡️ Requirements
 
-<h4 align='center'>⚡ PHP Script For Grabbing M3U Playlist from <a href="https://watch.tataplay.com">watch.tataplay.com</a> With 8-Days Catchup<br><br>🌟 If you find it helpful, Consider Giving STAR to This Repository❗</h4>
+- **Active TataPlay Account**
+- **A Working Brain** 🧠
 
-## ➡️Requirements:
-- **Active Tataplay Account**
-- **A Working Brain**
-
-## 🎯 HOW TO USE
+## 🎯 How to Use
 
 ### 1️⃣ Download PHP Web Server
 
-- **For Mobiles:** [KSWEB PRO v3.987](https://tsneh.vercel.app/ksweb_3.987.apk)
-- **For PC (Windows):** [XAMPP](https://www.apachefriends.org/download.html)
+- **For Mobiles** → [KSWEB PRO v3.987](https://tsneh.vercel.app/ksweb_3.987.apk)
+- **For PC (Windows)** → [XAMPP](https://www.apachefriends.org/download.html)
 
-### 2️⃣ Download and Extract Script
+### 2️⃣ Download and Setup Script
 
-- **Download:** [Script Zip](https://github.com/yuvraj824/tataplay-m3u/archive/refs/heads/main.zip)
+1. Download the [Script Zip File](https://github.com/yuvraj824/tataplay-m3u/archive/refs/heads/main.zip)
 
-1. Extract all files into the `htdocs` under `tataplay` folder in file manager (path may vary for XAMPP).
-    ```bash
-    📂FileManager
-    └───📂htdocs/
-         └───📂tataplay/
-              │────📄playlist.php
-              ├────📄functions.php
-              ├────📄manifest.php
-              └────📄 ....
-    ```
-2. Open KSWEB app (or XAMPP for PC) and start the **APACHE** server.
+2. Extract all files into the `htdocs` under `tataplay` folder in file manager (path may vary for XAMPP):
 
-3. The setup is complete, and the script is ready to use.
+   ```
+   📂 FileManager
+   └─── 📂 htdocs/
+        └─── 📂 tataplay/
+            ├───── 📄 playlist.php
+            ├───── 📄 functions.php
+            ├───── 📄 manifest.php
+            └───── 📄 ....
+   ```
 
-## How to Login:
+3. Open KSWEB app (or XAMPP for PC) and start the **APACHE** server
 
-- Open the Login page<br>(port `80` for XAMPP): [http://localhost:8000/tataplay/login.php](http://localhost:8000/tataplay/login.php)
-- Login with TATAPLAY subscriber ID and enter the OTP received on RMN.
-> **Note:** The account you use must be **Active Account**.
+4. The setup is complete, and the script is ready to use!
 
-## How to Access M3U Playlist:
+## 🔐 How to Login
 
-- In Tivimate or OTT Navigator, use the following playlist link (port `80` for XAMPP):
-    ```
-    http://localhost:8000/tataplay/playlist.php
-    ```
-- Enjoy Tataplay Channels with 8-day Catchup🎉.
+Open the Login page (use port `80` for XAMPP):
+```
+http://localhost:8000/tataplay/login.php
+```
 
-## Script Features:
+- Login with your TATAPLAY subscriber ID
+- Enter the OTP received on your registered mobile number
 
-- All TATAPLAY Channels
-- Multi-Quality Streaming
-- Easy as Plug & Play
-- Works on **All Compatible Platforms**
-- Written in Simplest form, Good for understanding and performing Authentication Process in PHP
+> **⚠️ Note:** The account you use must be an **Active Account**
 
-## Advanced Features:
+## ▶️ How to Access M3U Playlist
 
-- **8 Days Catchup Support** for available channels
-- Automatically Extracts Required Tokens
-- Well-Structured Cache System
+After log in, use the following playlist link on IPTV Players (use port `80` for XAMPP):
 
-## Warnings:
+```
+http://localhost:8000/tataplay/playlist.php
+```
 
-- This is for Educational Purposes Only
-- Do not sell this script, it is 💯% Free
+🎉 **Enjoy TataPlay Channels with 8-day Catchup!**
 
-<hr>
+## ➡️ Script Features
+
+- **All TATAPLAY Channels** - Complete channels access available on app
+- **Multi-Quality Streaming** - Switch between low and high quality streaming
+- **Easy as Plug & Play** - Simple setup and usage
+- **Universal Compatibility** - Works on  Tivimate, OTT Navigator and NS Player app.
+- **Beginner-Friendly Code** - Written in simplest form, good for understanding authentication process in PHP
+
+## ☠️ Advanced Features
+
+- **8 Days Catchup Support** - Available for supported channels
+- **Automatic Token Extraction** - Extracts required tokens automatically
+- **Well-Structured Cache System** - Optimized performance and reliability
+
+## 🚸 Warnings
+
+- This is **ONLY** for educational purposes
+- **DO NOT** sell this script - it's 💯% FREE
+- Use responsibly and ethically
+
+## Join The Community
+
+[![Telegram Channel](https://img.shields.io/badge/📢%20Channel-Join-blue?style=flat-square&logo=telegram)](https://t.me/ygxworld)
+[![Telegram Chat](https://img.shields.io/badge/💬%20Chat-Join-green?style=flat-square&logo=telegram)](https://t.me/ygx_chat)
+
+**Get updates, support & connect with other users!**
+
+---
 
 [![License: GPL](https://img.shields.io/badge/License-GPL-blue.svg)](LICENSE)
-[![Telegram](https://img.shields.io/badge/Telegram-Join%20Channel-blue?logo=telegram)](https://t.me/YGX_WORLD)
 [![PHP](https://img.shields.io/badge/PHP-7.4%2B-purple)]()
 
-> ⚠️ **Disclaimer:** This project is for educational purposes only to demonstrate authentication and IPTV streaming mechanics. I am not responsible for any misuse of the code that may cause revenue loss to the concerned parties and owners of these services. This code is protected under the [GPL](https://github.com/yuvraj490/tataplay-m3u/blob/main/LICENSE) license.
+## ⚠️ Disclaimer
+
+This project is for **educational purposes only** to demonstrate authentication and IPTV streaming mechanics. I am not responsible for any misuse of the code that may cause revenue loss to the concerned parties and owners of these services.
+
+This code is protected under the [GPL License](https://github.com/yuvraj490/tataplay-m3u/blob/main/LICENSE).
+
+---
 
 <!-- DO NOT REMOVE THIS CREDIT -->
 <!-- © 2023-25 yuvraj824 -->
-
